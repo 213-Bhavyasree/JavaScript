@@ -1,0 +1,31 @@
+<html ng-app="TestApp">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css"/>
+<script src="app.js"></script>
+ 
+<body ng-controller="testController">
+	<div class="container" style="padding:10px 10px;">
+		<h2>AngularJS Add/Remove From HTML Table Using JSON</h2>
+      <table class="table table-bordered" id="tbl_employees">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Employee Name</th>
+            <th>Age</th>
+            <th>Salary</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="tbl_posts_body">
+          <tr ng-repeat="emp in employees track by $index">
+            <td><span class="sn">{{emp.id}}</span>.</td>
+            <td>{{emp.employee_name}}</td>
+            <td>{{emp.employee_age}}</td>
+            <td>{{emp.employee_salary}}</td>
+            <td><a class="btn btn-xs delete-record" ng-click="removeRow($index)"><i class="glyphicon glyphicon-trash"></i></a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Employee  Table</title>
+
+</head>
+<body> <br><br><br><br>
+    <centre>
+        <table clas="table" id="myTable" border = "1">
+            <tr>
+                <th>EmployeeID</th>
+                <th>Name</th>
+                <th>Salary</th>
+            </tr>
+        </table>
+    </centre>
+    <script>
+        var myArray = [
+            {'id': '101', 'name' : 'bitu', 'salary' : '3lpa'},
+            {'id': '102', 'name' : 'nani', 'salary' : '3lpa'},
+            {'id': '103', 'name' : 'lucy', 'salary' : '3lpa'},
+            {'id': '104', 'name' : 'janu', 'salary' : '3lpa'},
+        ] 
+        buildTable(myArray)   
+        function buildTable(data) {
+            var table = document.getElementById('myTable')
+            for (var i =0; i < data.length; i++) {
+            var row = `<tr>
+                           <td>${data[i].id}</td>
+                           <td>${data[i].name}</td>
+                           <td>${data[i].salary}</td>
+                     </tr>`
+                table.innerHTML += row                
+
+            }
+        }
+    </script>
+</body>
+</html>    
